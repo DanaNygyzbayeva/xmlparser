@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.recipe.com/salads" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element type="sal:saladsType"  name="salads"  xmlns:sal="http://www.recipe.com/salads"/>
+
+    <xs:complexType name="saladsType">
+        <xs:sequence>
+            <xs:element type="sal:saladType" name="salad" maxOccurs="unbounded" minOccurs="0" xmlns:sal="http://www.recipe.com/salads"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saladType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="name">
+            </xs:element>
+            <xs:element type="xs:double" name="price">
+            </xs:element>
+            <xs:element type="sal:contentType" name="content" xmlns:sal="http://www.recipe.com/salads"/>
+        </xs:sequence>
+        <xs:attribute type="xs:long" name="id" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="contentType">
+        <xs:sequence>
+            <xs:element type="sal:vegetableType" name="vegetable" minOccurs="1" maxOccurs="unbounded" xmlns:sal="http://www.recipe.com/salads"/>
+            <xs:element type="sal:dressingType" name="dressing"  minOccurs="1" maxOccurs="unbounded" xmlns:sal="http://www.recipe.com/salads"/>
+            <xs:element type="sal:seasoningType" name="seasoning" minOccurs="1" maxOccurs="unbounded" xmlns:sal="http://www.recipe.com/salads"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <xs:complexType name="item">
+        <xs:sequence>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element   type="xs:double" name="price" />
+            <xs:element type="xs:integer" name="calorie"  />
+            <xs:element type="xs:double" name="weight"  />
+            <xs:element type="xs:string" name="color"  />
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vegetableType">
+        <xs:complexContent>
+            <xs:extension base="item">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="storage_type"  />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dressingType">
+        <xs:complexContent>
+            <xs:extension base="item">
+                <xs:sequence>
+                    <xs:element type="xs:double" name="fattiness"  />
+                    <xs:element type="xs:string" name="origin"  />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="seasoningType">
+        <xs:complexContent>
+            <xs:extension base="item">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="flavour"  />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,38 @@
+<salads xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.recipe.com/salads"
+        xsi:schemaLocation="http://www.recipe.com/salads salad.xsd">
+
+    <salad id ="111">
+        <name>Ceasar</name>
+        <price>650.00</price>
+        <content>
+            <vegetable>Potato</vegetable>
+            <dressing>Mayonnaise</dressing>
+            <seasoning>Salt</seasoning>
+        </content>
+
+    </salad>
+
+    <salad id="222">
+        <name>Olivier</name>
+        <price>550.00</price>
+        <content>
+            <vegetable>Carrot</vegetable>
+            <dressing>Olive oil</dressing>
+            <seasoning>Pepper</seasoning>
+        </content>
+    </salad>
+
+    <salad id="333">
+        <name>Fresh salad</name>
+        <price>650.00</price>
+        <content>
+            <vegetable>Beet</vegetable>
+            <dressing>Olive oil</dressing>
+            <seasoning>Salt</seasoning>
+        </content>
+    </salad>
+
+</salads>
+
+
